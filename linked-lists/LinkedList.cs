@@ -229,7 +229,7 @@ public class CustomLinkedList
         var a = first;
         var b = first;
 
-        while (b != last && b.next != last)
+        while (b != null && b != last && b.next != last)
         {
             b = b.next.next;
             a = a.next;
