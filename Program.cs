@@ -23,8 +23,33 @@ try
 
     #endregion
 
+    #region LinkedList
+
+    CustomLinkedList list = new CustomLinkedList();
+
+    list.AddFirst(10);
+    list.AddLast(20);
+    list.AddLast(30);
+    list.AddLast(40);
+    list.AddLast(50);
+    list.AddLast(60);
+    list.AddLast(70);
+    list.AddLast(80);
+    list.AddLast(90);
+
+    list.DeleteFirst();
+    list.DeleteLast();
+
+    Console.WriteLine(list.Size());
+    Console.WriteLine(string.Join(",", list.PrintList()));
+    Console.WriteLine(string.Join(",", list.PrintInReverse()));
+    Console.WriteLine(list.GetKthNodeFromEnd(3));
+    list.printMiddle();
+
+    #endregion
 }
 catch (Exception ex)
 {
     Console.WriteLine(ex.Message);
 }
+
