@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Collections;
+
 try
 {
 
@@ -53,8 +55,51 @@ try
     // StringReverser reverser = new StringReverser();
     // System.Console.WriteLine(reverser.Reverse("What is my name?"));
 
-    BalancedExpression expression = new BalancedExpression();
-    System.Console.WriteLine(expression.ValidateExpression("(([1] + <2>))[a]"));
+    // BalancedExpression expression = new BalancedExpression();
+    // System.Console.WriteLine(expression.ValidateExpression("(([1] + <2>))[a]"));
+
+
+
+    #endregion
+
+    #region Queue
+
+    // Queue<int> m_Queue = new Queue<int>();
+    // m_Queue.Enqueue(0);
+    // m_Queue.Enqueue(1);
+    // m_Queue.Enqueue(2);
+    // m_Queue.Enqueue(3);
+    // m_Queue.Enqueue(4);
+    // m_Queue.Enqueue(5);
+
+
+    // QueueReverser.Reverse(m_Queue);
+
+
+    // QueueBuilderUsingArray queue = new QueueBuilderUsingArray();
+    QueueBuilderUsingStack queue = new QueueBuilderUsingStack();
+    queue.Enqueue(10);
+    queue.Enqueue(20);
+    queue.Enqueue(30);
+    queue.Enqueue(40);
+    queue.Enqueue(50);
+    queue.Enqueue(60);
+    queue.Enqueue(70);
+    queue.Enqueue(80);
+    queue.Enqueue(90);
+    queue.Enqueue(100);
+
+    Console.WriteLine(queue.Dequeue());
+    Console.WriteLine(queue.Dequeue());
+    Console.WriteLine(queue.Dequeue());
+    Console.WriteLine(queue.Dequeue());
+    Console.WriteLine(queue.Dequeue());
+
+    Console.WriteLine(queue.Peek());
+    Console.WriteLine(queue.IsEmpty());
+    //Console.WriteLine(queue.IsFull());
+
+
 
     #endregion
 }
