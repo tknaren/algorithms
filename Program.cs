@@ -78,17 +78,17 @@ try
 
     // QueueBuilderUsingArray queue = new QueueBuilderUsingArray();
     //QueueBuilderUsingStack queue = new QueueBuilderUsingStack();
-    PriorityQueue queue = new PriorityQueue();
-    queue.Enqueue(30);
-    queue.Enqueue(40);
-    queue.Enqueue(10);
-    queue.Enqueue(80);
-    queue.Enqueue(90);
-    queue.Enqueue(20);
-    queue.Enqueue(50);
-    queue.Enqueue(60);
-    queue.Enqueue(70);
-    queue.Enqueue(100);
+    // PriorityQueue queue = new PriorityQueue();
+    // queue.Enqueue(30);
+    // queue.Enqueue(40);
+    // queue.Enqueue(10);
+    // queue.Enqueue(80);
+    // queue.Enqueue(90);
+    // queue.Enqueue(20);
+    // queue.Enqueue(50);
+    // queue.Enqueue(60);
+    // queue.Enqueue(70);
+    // queue.Enqueue(100);
 
     // Console.WriteLine(queue.Dequeue());
     // Console.WriteLine(queue.Dequeue());
@@ -101,6 +101,14 @@ try
     //Console.WriteLine(queue.IsFull());
 
 
+
+    #endregion
+
+    #region Hash Tables
+
+    CharOperations charOperations = new CharOperations();
+    Console.WriteLine(charOperations.GetFirstNonRepeatingChar("a green apple"));
+    Console.WriteLine(charOperations.GetFirstRepeatingCharUsingHashSet("a green apple"));
 
     #endregion
 }
