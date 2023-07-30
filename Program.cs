@@ -106,9 +106,15 @@ try
 
     #region Hash Tables
 
-    CharOperations charOperations = new CharOperations();
-    Console.WriteLine(charOperations.GetFirstNonRepeatingChar("a green apple"));
-    Console.WriteLine(charOperations.GetFirstRepeatingCharUsingHashSet("a green apple"));
+    // CharOperations charOperations = new CharOperations();
+    // Console.WriteLine(charOperations.GetFirstNonRepeatingChar("a green apple"));
+    // Console.WriteLine(charOperations.GetFirstRepeatingCharUsingHashSet("a green apple"));
+
+    // FrequencyFinder frequencyFinder = new FrequencyFinder();
+    // Console.WriteLine(frequencyFinder.MostFrequent(new int[] { 1, 2, 3, 2, 3, 3, 4 }));
+
+    PairsWithDifference pairsWithDifference = new PairsWithDifference();
+    Console.WriteLine(pairsWithDifference.CountPairsWithDiff(input: new int[] { 1, 7, 5, 9, 2, 12, 3 }, diffVal: 2));
 
     #endregion
 }
