@@ -113,10 +113,29 @@ try
     // FrequencyFinder frequencyFinder = new FrequencyFinder();
     // Console.WriteLine(frequencyFinder.MostFrequent(new int[] { 1, 2, 3, 2, 3, 3, 4 }));
 
-    PairsWithDifference pairsWithDifference = new PairsWithDifference();
-    Console.WriteLine(pairsWithDifference.CountPairsWithDiff(input: new int[] { 1, 7, 5, 9, 2, 12, 3 }, diffVal: 2));
+    // PairsWithDifference pairsWithDifference = new PairsWithDifference();
+    // Console.WriteLine(pairsWithDifference.CountPairsWithDiff(input: new int[] { 1, 7, 5, 9, 2, 12, 3 }, diffVal: 2));
+
+
 
     #endregion
+
+    Tree tree = new Tree();
+    tree.Insert(10);
+    tree.Insert(7);
+    tree.Insert(11);
+    tree.Insert(12);
+    tree.Insert(8);
+    tree.Insert(5);
+    tree.Insert(3);
+    tree.Insert(14);
+
+    //tree.Find(5);
+
+    PreOrderTraversal preOrderTraversal = new PreOrderTraversal();
+    preOrderTraversal.TraversePreOrder(tree.Root);
+
+
 }
 catch (Exception ex)
 {
