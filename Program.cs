@@ -120,21 +120,33 @@ try
 
     #endregion
 
-    Tree tree = new Tree();
-    tree.Insert(10);
-    tree.Insert(7);
-    tree.Insert(11);
-    tree.Insert(12);
-    tree.Insert(8);
-    tree.Insert(5);
-    tree.Insert(3);
-    tree.Insert(14);
+    Tree treeA = new Tree();
+    treeA.Insert(10);
+    treeA.Insert(7);
+    treeA.Insert(11);
+    treeA.Insert(12);
+    treeA.Insert(8);
+    treeA.Insert(35);
+    treeA.Insert(25);
+    treeA.Insert(14);
 
+    // Tree treeB = new Tree();
+    // treeB.Insert(11);
+    // treeB.Insert(12);
+    // treeB.Insert(10);
+    // treeB.Insert(8);
+    // treeB.Insert(7);
+    // treeB.Insert(5);
+    // treeB.Insert(3);
+    // treeB.Insert(14);
+
+    // Console.WriteLine(treeA.IsEquals(treeB));
     //tree.Find(5);
 
-    PreOrderTraversal preOrderTraversal = new PreOrderTraversal();
-    preOrderTraversal.TraversePreOrder(tree.Root);
+    // PreOrderTraversal preOrderTraversal = new PreOrderTraversal();
+    // preOrderTraversal.TraversePreOrder(tree.Root);
 
+    Console.WriteLine(treeA.ValidateBinaryTreePrinciple());
 
 }
 catch (Exception ex)
