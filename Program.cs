@@ -120,15 +120,17 @@ try
 
     #endregion
 
-    Tree treeA = new Tree();
-    treeA.Insert(10);
-    treeA.Insert(7);
-    treeA.Insert(11);
-    treeA.Insert(12);
-    treeA.Insert(8);
-    treeA.Insert(35);
-    treeA.Insert(25);
-    treeA.Insert(14);
+    #region Binary Trees
+
+    // Tree treeA = new Tree();
+    // treeA.Insert(10);
+    // treeA.Insert(7);
+    // treeA.Insert(11);
+    // treeA.Insert(12);
+    // treeA.Insert(8);
+    // treeA.Insert(35);
+    // treeA.Insert(25);
+    // treeA.Insert(14);
 
     // ------------------------------------------------
 
@@ -167,10 +169,39 @@ try
 
     // ------------------------------------------------
 
-    LevelOrderTraversal levelOrderTraversal = new LevelOrderTraversal(treeA);
-    levelOrderTraversal.TraverseLevelOrder();
+    // LevelOrderTraversal levelOrderTraversal = new LevelOrderTraversal(treeA);
+    // levelOrderTraversal.TraverseLevelOrder();
 
     // ------------------------------------------------
+
+    #endregion
+
+    #region Binary Tree Misc functions
+
+    // Tree tree = new Tree();
+    // tree.Insert(10);
+    // tree.Insert(7);
+    // tree.Insert(11);
+    // tree.Insert(12);
+    // tree.Insert(8);
+    // tree.Insert(5);
+    // tree.Insert(25);
+    // tree.Insert(14);
+
+    // System.Console.WriteLine(tree.Size());
+
+    // System.Console.WriteLine(tree.CountLeaves());
+
+    // System.Console.WriteLine(tree.Max());
+
+    // System.Console.WriteLine(tree.Contains(26));
+
+    // System.Console.WriteLine(tree.AreSibling(8, 5));
+
+    // foreach (var item in tree.GetAncestors(8))
+    //     System.Console.WriteLine(item.ToString());
+
+    #endregion
 
 }
 catch (Exception ex)

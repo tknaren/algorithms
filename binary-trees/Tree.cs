@@ -17,6 +17,17 @@ public class Tree
 
     public Node Root { get; set; }
 
+    private int size;
+
+    private int leavesCount;
+
+    private int max;
+
+    private bool contains;
+
+    private bool areSibling;
+
+    private bool isItemFound;
 
     public void Insert(int value)
     {
@@ -304,4 +315,157 @@ public class Tree
         GetNodesAtDistance(root.RightChild, list, distance - 1);
     }
 
+    public int Size()
+    {
+        // Size of the binary tree means, total number of nodes in a tree
+        Size(this.Root);
+
+        return size;
+    }
+
+    private void Size(Node root)
+    {
+        if (root == null)
+            return;
+
+        this.size++;              // Root
+        Size(root.LeftChild);     // Left
+        Size(root.RightChild);    // Right
+    }
+
+    public int CountLeaves()
+    {
+        //leavesCount
+
+        // Size of the binary tree means, total number of nodes in a tree
+        CountLeaves(this.Root);
+
+        return leavesCount;
+
+    }
+
+    private void CountLeaves(Node root)
+    {
+        if (root == null)
+            return;
+
+        if (root.LeftChild == null && root.RightChild == null)
+        {
+            this.leavesCount++;
+            return;
+        }
+
+        CountLeaves(root.LeftChild);     // Left
+        CountLeaves(root.RightChild);    // Right
+    }
+
+    public int Max()
+    {
+        Max(this.Root);
+
+        return this.max;
+    }
+
+    private void Max(Node root)
+    {
+        if (root == null)
+            return;
+
+        // consider the right most child where there are no more nodes. 
+        // As per the binary tree rule
+        if (root.RightChild == null)
+        {
+            this.max = root.Val;
+            return;
+        }
+
+        //Max(root.LeftChild);     // Left
+        Max(root.RightChild);    // Right
+    }
+
+
+    public bool Contains(int value)
+    {
+        Contains(this.Root, value);
+
+        return contains;
+    }
+
+    private void Contains(Node root, int value)
+    {
+        if (root == null)
+            return;
+
+        if (root.Val == value)
+        {
+            contains = true;
+            return;
+        }
+
+        Contains(root.LeftChild, value);     // Left
+        Contains(root.RightChild, value);    // Right
+    }
+
+    public bool AreSibling(int val1, int val2)
+    {
+        //areSibling
+        AreSibling(this.Root, val1, val2);
+
+        return areSibling;
+
+    }
+
+    private void AreSibling(Node root, int val1, int val2)
+    {
+        //areSibling
+
+        if (root == null)
+            return;
+
+        if (root.LeftChild != null && root.RightChild != null)
+        {
+            if ((root.LeftChild.Val == val1 || root.LeftChild.Val == val2) &&
+                (root.RightChild.Val == val1 || root.RightChild.Val == val2))
+            {
+                areSibling = true;
+                return;
+            }
+        }
+
+        AreSibling(root.LeftChild, val1, val2);     // Left
+        AreSibling(root.RightChild, val1, val2);    // Right        
+    }
+
+    public List<int> GetAncestors(int value)
+    {
+        List<int> ints = new List<int>();
+
+        GetAncestors(this.Root, ints, value);
+
+        return ints;
+    }
+
+    /* If value is present in tree, then prints the ancestors
+       and returns true, otherwise returns false. */
+    private bool GetAncestors(Node root, List<int> list, int value)
+    {
+        if (root == null)
+            return false;
+
+        if (root.Val == value)
+        {
+            return true;
+        }
+
+        /* If target is present in either left or right subtree of this node,
+             then add this node val */
+        if (GetAncestors(root.LeftChild, list, value) ||
+            GetAncestors(root.RightChild, list, value))
+        {
+            list.Add(root.Val);
+            return true;
+        }
+
+        return false;
+    }
 }
