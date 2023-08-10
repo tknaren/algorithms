@@ -101,7 +101,12 @@ public class Tree
         return false;
     }
 
-    public int GetHeight(Node root)
+    public int GetHeight()
+    {
+        return GetHeight(this.Root);
+    }
+
+    private int GetHeight(Node root)
     {
         if (root == null)
             return -1;
@@ -247,6 +252,56 @@ public class Tree
         }
 
         return true;
+    }
+
+    // method to find the distance of a node from the root node.
+    // get the distance param from the user
+    // run a recursion till the distance value becomes 0
+    // ie., if the user needs nodes at Distance 1, it means the 2nd level from the root
+    // so if you decrement the distance by 1 when you traverse thru the node, until it hits zero, 
+    // that is the node you are looking for
+    public void PrintNodesAtDistance(int distance)
+    {
+        PrintNodesAtDistance(this.Root, distance);
+    }
+
+
+    private void PrintNodesAtDistance(Node root, int distance)
+    {
+        if (root == null)
+            return;
+
+        if (distance == 0)
+        {
+            Console.WriteLine(root.Val);
+            return;
+        }
+
+        PrintNodesAtDistance(root.LeftChild, distance - 1);
+        PrintNodesAtDistance(root.RightChild, distance - 1);
+    }
+
+    public List<int> GetNodesAtDistance(int distance)
+    {
+        List<int> ints = new List<int>();
+
+        GetNodesAtDistance(this.Root, ints, distance);
+
+        return ints;
+    }
+    private void GetNodesAtDistance(Node root, List<int> list, int distance)
+    {
+        if (root == null)
+            return;
+
+        if (distance == 0)
+        {
+            list.Add(root.Val);
+            return;
+        }
+
+        GetNodesAtDistance(root.LeftChild, list, distance - 1);
+        GetNodesAtDistance(root.RightChild, list, distance - 1);
     }
 
 }

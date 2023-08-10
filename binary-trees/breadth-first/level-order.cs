@@ -2,34 +2,20 @@ using System.Text;
 
 public class LevelOrderTraversal
 {
-    Tree tree = new Tree();
+    private readonly Tree tree;
 
     // Initialize the data
     // Create an object of the Tree class and Insert the nodes
-    public LevelOrderTraversal()
+    public LevelOrderTraversal(Tree tree)
     {
-        int[] nodeData = new int[] { 20, 10, 30, 6, 14, 24, 3, 8, 26 };
-
-        foreach (int item in nodeData)
-        {
-            tree.Insert(item);
-        }
+        this.tree = tree;
     }
 
-    public string GetItemsUsingBreadFirstTraversal()
+    public void TraverseLevelOrder()
     {
-        StringBuilder stringBuilder = new StringBuilder();
-
-        Tree.Node currentNode = tree.Root;
-
-        while (currentNode != null)
-        {
-
-        }
-
-        return stringBuilder.ToString();
+        for (int i = 0; i <= tree.GetHeight(); i++)
+            foreach (var item in tree.GetNodesAtDistance(i))
+                Console.WriteLine(item);
 
     }
-
-
 }

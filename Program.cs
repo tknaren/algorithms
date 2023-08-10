@@ -130,6 +130,8 @@ try
     treeA.Insert(25);
     treeA.Insert(14);
 
+    // ------------------------------------------------
+
     // Tree treeB = new Tree();
     // treeB.Insert(11);
     // treeB.Insert(12);
@@ -139,14 +141,36 @@ try
     // treeB.Insert(5);
     // treeB.Insert(3);
     // treeB.Insert(14);
-
     // Console.WriteLine(treeA.IsEquals(treeB));
-    //tree.Find(5);
+
+    // ------------------------------------------------
+
+    // ------------------------------------------------
 
     // PreOrderTraversal preOrderTraversal = new PreOrderTraversal();
     // preOrderTraversal.TraversePreOrder(tree.Root);
 
-    Console.WriteLine(treeA.ValidateBinaryTreePrinciple());
+    // ------------------------------------------------
+
+
+    // ------------------------------------------------
+
+    //Console.WriteLine(treeA.ValidateBinaryTreePrinciple());
+    // var res = treeA.GetNodesAtDistance(2);
+    // foreach (var item in res)
+    // {
+    //     Console.WriteLine(item);
+    // }
+
+    // ------------------------------------------------
+
+
+    // ------------------------------------------------
+
+    LevelOrderTraversal levelOrderTraversal = new LevelOrderTraversal(treeA);
+    levelOrderTraversal.TraverseLevelOrder();
+
+    // ------------------------------------------------
 
 }
 catch (Exception ex)
