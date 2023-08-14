@@ -203,6 +203,24 @@ try
 
     #endregion
 
+    #region AVL Trees
+
+    AVLTree aVLTree = new AVLTree();
+
+    aVLTree.Insert(5);
+    aVLTree.Insert(2);
+    aVLTree.Insert(3);
+    aVLTree.Insert(6);
+    aVLTree.Insert(8);
+    aVLTree.Insert(1);
+    aVLTree.Insert(9);
+    aVLTree.Insert(4);
+    aVLTree.Insert(7);
+
+    System.Console.WriteLine(aVLTree.Root.height);
+
+    #endregion
+
 }
 catch (Exception ex)
 {
