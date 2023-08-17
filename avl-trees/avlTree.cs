@@ -55,6 +55,23 @@ public class AVLTree
         return root;
     }
 
+    public bool IsBalanced()
+    {
+        return IsBalanced(this.Root);
+    }
+
+    private bool IsBalanced(AVLNode root)
+    {
+        if (root == null)
+        {
+            return true;
+        }
+
+        return !isLeftHeavy(root) && !isRightHeavy(root)
+            && IsBalanced(root.LeftChild) && IsBalanced(root.RightChild);
+
+    }
+
     private int DetermineHeight(AVLNode root)
     {
         return Math.Max(GetHeightOfLeftChild(root), GetHeightOfRightChild(root)) + 1;
@@ -91,13 +108,15 @@ public class AVLTree
     {
         if (isLeftHeavy(root))
         {
-            Console.WriteLine(string.Format("{0} => L {1}", root.balanceFactor, root.LeftChild.balanceFactor));
+            //Console.WriteLine(string.Format("{0} => L {1}", root.balanceFactor, root.LeftChild.balanceFactor));
 
             if (root.LeftChild.balanceFactor < 0)
             {
-                Console.WriteLine(string.Format(" LeftRotate - {0}, RightRotate - {1}", root.LeftChild.Val, root.Val));
+                Console.WriteLine(string.Format(" LeftRotate - {0}", root.LeftChild.Val));
                 root.LeftChild = RotateLeft(root.LeftChild);
             }
+
+            Console.WriteLine(string.Format(" RightRotate - {0}", root.Val));
 
             return RotateRight(root);
 
@@ -105,14 +124,15 @@ public class AVLTree
 
         if (isRightHeavy(root))
         {
-            Console.WriteLine(
-                string.Format("{0} => R {1}", root.balanceFactor, root.RightChild.balanceFactor));
+            //Console.WriteLine(string.Format("{0} => R {1}", root.balanceFactor, root.RightChild.balanceFactor));
 
             if (root.RightChild.balanceFactor > 0)
             {
-                Console.WriteLine(string.Format(" RightRotate - {0}, LeftRotate - {1}", root.RightChild.Val, root.Val));
+                Console.WriteLine(string.Format(" RightRotate - {0}", root.RightChild.Val));
                 root.RightChild = RotateRight(root.RightChild);
             }
+
+            Console.WriteLine(string.Format(" LeftRotate - {0}", root.Val));
 
             return RotateLeft(root);
         }
@@ -133,11 +153,15 @@ public class AVLTree
         root.height = DetermineHeight(root);
         newRoot.height = DetermineHeight(newRoot);
 
-        return root;
+        return newRoot;
     }
 
     private AVLNode RotateRight(AVLNode root)
     {
+        // newRoot = root.Left
+        // root.Left = newRoot.Right
+        // newRoot.Right = root
+
         AVLNode newRoot = root.LeftChild;
         root.LeftChild = newRoot.RightChild;
         newRoot.RightChild = root;
@@ -145,16 +169,9 @@ public class AVLTree
         root.height = DetermineHeight(root);
         newRoot.height = DetermineHeight(newRoot);
 
-        return root;
+        return newRoot;
     }
 
-    private void isRightSkewedTree(AVLNode root)
-    {
 
-    }
-    private void isLeftSkewedTree(AVLNode root)
-    {
-
-    }
 
 }

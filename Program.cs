@@ -217,7 +217,9 @@ try
     aVLTree.Insert(4);
     aVLTree.Insert(7);
 
-    //System.Console.WriteLine(aVLTree.Root.height);
+    System.Console.WriteLine(aVLTree.IsBalanced());
+
+    System.Console.WriteLine(aVLTree.Root.height);
 
     #endregion
 
